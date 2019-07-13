@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://banco/ufscar
+    username: root
+    password: root
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, prometheus

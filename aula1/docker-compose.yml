@@ -1,0 +1,23 @@
+version: '3'
+services: 
+ banco:
+  image: mariadb
+  ports:
+  - 3307:3306 
+  environment:
+  - MYSQL_ROOT_PASSWORD=12345a
+  - MYSQL_DATABASE=aula
+  - MYSQL_USER=usuario
+  - MYSQL_PASSWORD=senha
+ 
+ fila: 
+  image: webcenter/activemq:5.11.1
+  ports:
+  - 8161:8161
+  - 61616:61616
+  - 61613:61613
+ 
+ proxy:
+  image: nginx
+  ports:
+  - 8899:80
